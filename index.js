@@ -14,7 +14,7 @@ today = yyyy + "-" + mm + "-" + dd;
 document.getElementById("date").setAttribute("min", today);
 document.getElementById("mob_date").setAttribute("min", today);
 
-var todaynew = new Date(new Date().getTime() + 5 * 24 * 60 * 60 * 1000);
+var todaynew = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000);
 console.log(todaynew);
 var ddnew = todaynew.getDate();
 var mmnew = todaynew.getMonth() + 1;
