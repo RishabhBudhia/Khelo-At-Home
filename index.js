@@ -47,7 +47,7 @@ async function SubForm() {
       }
 
       let phno = document.querySelector("#phno").value;
-      var regex = /^[+91]?[0-9]{10,12}$/;
+      var regex = /^[+091]?[0-9]{10,12}$/;
       if (regex.test(phno)) {
         count++;
         localStorage.setItem("phno", phno);
