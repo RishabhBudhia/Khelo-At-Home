@@ -1,5 +1,5 @@
 var today = new Date();
-var dd = today.getDate() + 1;
+var dd = today.getDate() + 2;
 var mm = today.getMonth() + 1;
 var yyyy = today.getFullYear();
 
@@ -28,6 +28,8 @@ if (mmnew < 10) {
 }
 
 todaynew = yyyynew + "-" + mmnew + "-" + ddnew;
+
+todaynew = "10-07-2021";
 document.getElementById("date").setAttribute("max", todaynew);
 document.getElementById("mob_date").setAttribute("max", todaynew);
 
@@ -215,5 +217,61 @@ function display() {
     thankyou();
   } else {
     mob_thankyou();
+  }
+}
+
+$("#date").flatpickr({
+  // dateFormat: "m-d-Y",
+  minDate: new Date().fp_incr(2),
+  maxDate: new Date().fp_incr(8),
+  disable: [
+    function (date) {
+      return date.getDay() === 2; // disable weekends
+    },
+  ],
+  locale: {
+    firstDayOfWeek: 1, // set start day of week to Monday
+  },
+});
+$("#mob_date").flatpickr({
+  minDate: new Date().fp_incr(2),
+  maxDate: new Date().fp_incr(8),
+  disable: [
+    function (date) {
+      return date.getDay() === 2; // disable weekends
+    },
+  ],
+  locale: {
+    firstDayOfWeek: 0, // set start day of week to Monday
+  },
+});
+
+function datechanger(event) {
+  var days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  var d = new Date(event.target.value);
+  var dayName = days[d.getDay()];
+
+  if (dayName == "Saturday" || dayName == "Sunday") {
+    document.querySelector(".mob_weekend").style.display = "block";
+    document.querySelector(".mob_weekend1").style.display = "block";
+    document.querySelector(".mob_weekend2").style.display = "block";
+    document.querySelector(".weekend").style.display = "block";
+    document.querySelector(".weekend1").style.display = "block";
+    document.querySelector(".weekend2").style.display = "block";
+  } else {
+    document.querySelector(".mob_weekend").style.display = "none";
+    document.querySelector(".mob_weekend1").style.display = "none";
+    document.querySelector(".mob_weekend2").style.display = "none";
+    document.querySelector(".weekend").style.display = "none";
+    document.querySelector(".weekend1").style.display = "none";
+    document.querySelector(".weekend2").style.display = "none";
   }
 }

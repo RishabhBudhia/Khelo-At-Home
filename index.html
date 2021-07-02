@@ -15,6 +15,7 @@
     <title>At Home Football Training For Kids</title>
     <link rel="canonical" href="at-home-first-academy-coaching.html">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.css">
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -61,9 +62,7 @@
                                         Safety
                                         <span class="measure">Measures</span> </span>
                                 </span></li>
-                            <!-- <li> <img src="./assests/icons/icon3.svg" alt=""><span class="ml-2"> Students participated
-                                    in <span class="over"> MDFA league 2nd division </span> </span>
-                                </span></li> -->
+
                             <li> <img src="./assests/icons/icon3.svg" alt=""><span class="ml-2"> Personalised
                                     <span class="tab">approach
                                         <span class="child_align"> as per the <span
@@ -113,14 +112,21 @@
                             </div>
                             <div>
                                 <input type="text" id="date" name="Date" placeholder="Select Date"
-                                    onfocus="(this.type='date')" required>
+                                    onfocus="(this.type='date')" onchange="datechanger(event)" required>
                             </div>
                             <div>
                                 <select name="Time" id="time" required>
                                     <option value="">Select Preferred Time</option>
-                                    <option value="4pm - 8pm">4:00pm to 8pm</option>
-                                    <option value="4pm - 8pm">4:00pm to 8pm</option>
-                                    <option value="4pm - 8pm">4:00pm to 8pm</option>
+                                    <option class="mob_weekend" value="8:00am to 9:00am">8:00am to 9:00am</option>
+                                    <option class="mob_weekend mob_weekend1" value="9:00am to 10:00am">9:00am to 10:00am
+                                    </option>
+                                    <option class="mob_weekend mob_weekend2" value="10:00am to 11:00am">10:00am to
+                                        11:00am
+                                    </option>
+
+                                    <option value="4:00pm to 5:00pm">4:00pm to 5:00pm</option>
+                                    <option value="5:00pm to 6:00pm">5:00pm to 6:00pm</option>
+                                    <option value="6:00pm to 7:00pm">6:00pm to 7:00pm</option>
                                 </select>
                             </div>
                             <button type="button" class="button" onclick="SubForm()">BOOK A FREE
@@ -161,14 +167,20 @@
                         </div>
                         <div>
                             <input type="text" id="mob_date" name="Date" placeholder="Select Date"
-                                onfocus="(this.type='date')" required>
+                                onfocus="(this.type='date')" onchange="datechanger(event)" required>
                         </div>
                         <div>
                             <select name="Time" id="mob_time" required>
-                                <option value="">Select Time</option>
-                                <option value="4pm - 8pm">4:00pm to 8pm</option>
-                                <option value="4pm - 8pm">4:00pm to 8pm</option>
-                                <option value="4pm - 8pm">4:00pm to 8pm</option>
+                                <option value="">Select Preferred Time</option>
+                                <option class="weekend" value="8:00am to 9:00am">8:00am to 9:00am</option>
+                                <option class="weekend weekend1" value="9:00am to 10:00am">9:00am to 10:00am
+                                </option>
+                                <option class="weekend weekend2" value="10:00am to 11:00am">10:00am to 11:00am
+                                </option>
+
+                                <option value="4:00pm to 5:00pm">4:00pm to 5:00pm</option>
+                                <option value="5:00pm to 6:00pm">5:00pm to 6:00pm</option>
+                                <option value="6:00pm to 7:00pm">6:00pm to 7:00pm</option>
                             </select>
                         </div>
                         <button type="button" class="button" onclick="MobSubForm()">BOOK A FREE TRIAL</button>
@@ -231,6 +243,10 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--  Flatpickr  -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.2.3/flatpickr.js"></script>
 
     <script src="./index.js"></script>
 
