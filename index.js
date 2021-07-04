@@ -93,7 +93,7 @@ async function SubForm() {
 function MobSubForm() {
   let count = 0;
   $.ajax({
-    url: "https://api.apispreadsheets.com/data/14847/",
+    url: "https://api.apispreadsheets.com/data/14882/",
     type: "post",
     data: $("#mob_myForm").serializeArray(),
     success: function () {
