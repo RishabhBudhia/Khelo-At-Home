@@ -33,6 +33,12 @@ todaynew = "10-07-2021";
 document.getElementById("date").setAttribute("max", todaynew);
 document.getElementById("mob_date").setAttribute("max", todaynew);
 
+var x = document.getElementById("timestamp");
+x.value = new Date();
+
+var y = document.getElementById("mob_timestamp");
+y.value = new Date();
+
 function SubForm() {
   let count = 0;
   $.ajax({
@@ -40,12 +46,6 @@ function SubForm() {
     type: "post",
     data: $("#myForm").serializeArray(),
     success: function () {
-      if (count == 5) {
-        // alert("Form Data Submitted :)");
-        window.location.href = "thank-you.html";
-      } else {
-        // alert("Please fill all the fields");
-      }
       let email = document.querySelector("#email").value;
       var regex1 =
         /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -83,12 +83,12 @@ function SubForm() {
         count++;
         localStorage.setItem("location", location);
       }
-      // if (count == 5) {
-      //   // alert("Form Data Submitted :)");
-      //   window.location.href = "thank-you.html";
-      // } else {
-      //   // alert("Please fill all the fields");
-      // }
+      if (count == 5) {
+        // alert("Form Data Submitted :)");
+        window.location.href = "thank-you.html";
+      } else {
+        // alert("Please fill all the fields");
+      }
     },
     error: function () {
       alert("There was an error :(  Please Try Again!");
