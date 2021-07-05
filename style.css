@@ -125,8 +125,9 @@ select {
 }
 
 button {
-  outline: none;
-  border: none;
+  /* outline: none; */
+  /* border: none; */
+  cursor: pointer;
   margin-bottom: 4rem;
   background-color: #ff4e00;
   width: 20rem;
@@ -140,6 +141,13 @@ button {
   line-height: 29px;
   font-family: "NexaL";
   font-style: normal;
+  transition: 0.2s all;
+}
+
+button:hover {
+  background-color: #ff4e00;
+  opacity: 0.8;
+  transform: scale(0.98);
 }
 .desktop_footer {
   font-family: "Roboto";
@@ -191,7 +199,7 @@ button {
     background-image: url("./assests/bgnew.svg");
   }
   .response {
-    margin-left: 0rem;
+    margin-left: 3.7rem;
   }
   .child {
     margin-left: 0;
@@ -386,6 +394,12 @@ button {
 
   button {
     font-size: 17px;
+    transition: 0.2s all;
+  }
+  button:hover {
+    background-color: #ff4e00;
+    opacity: 0.8;
+    transform: scale(0.98);
   }
 
   .mobile_perks {
@@ -445,11 +459,6 @@ button {
 @media (max-width: 320px) {
   input,
   select {
-    width: 16rem;
-    height: 3rem;
-  }
-
-  button {
     width: 16rem;
     height: 3rem;
   }
